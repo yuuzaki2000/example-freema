@@ -55,3 +55,4 @@ MAIL_FROM_NAME="${APP_NAME}"
 パスワード：12345
 
 # example-freema
+# example-freema
