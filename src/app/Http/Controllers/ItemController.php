@@ -51,6 +51,8 @@ class ItemController extends Controller
         }else if($request->page == "favorite"){
             $products = Product::all();
             $keyword = $request->keyword;
+            //下記追加
+            $particularProducts = collect();
 
             if(empty($particularListings)){
             }else{
@@ -62,7 +64,23 @@ class ItemController extends Controller
                     }
                 }
             }
-            $page = "";
+            //下記修正
+            $page = $request->page;
+
+            //favoriteの場合は下記必要？
+            /*
+            if($keyword !== null){
+                $products = $particularProducts->filter(function ($product) use ($keyword) {
+                    return strpos($product->name, $keyword) !== false;
+                });
+            }else{
+                $products = $particularProducts;
+            }  */
+        }else if(($request->page == "search")){
+            //これを追加
+            $keyword = $request->keyword;
+            $page = $request->page;
+            $products = Product::where('name', 'like', "%{$keyword}%")->get();
         }
 
         foreach($products as $product){
@@ -123,7 +141,8 @@ class ItemController extends Controller
         $keyword = $request->keyword;
         $page = $request->page;
         $products = Product::where('name', 'like', "%{$keyword}%")->get();
-        return view('index', compact('products', 'keyword','page'));
+        /* return view('index', compact('products', 'keyword','page')); */
+        return redirect()->route('item.index', ['keyword' => $keyword, 'page' => $page]);
     }
 
     public function getDetail($item_id, Request $request){

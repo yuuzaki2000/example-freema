@@ -9,15 +9,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile-cover', ['userId' => ''.e($userId).'','profileId' => ''.e($profileId).''])->html();
-} elseif ($_instance->childHasBeenRendered('jLnENzT')) {
-    $componentId = $_instance->getRenderedChildComponentId('jLnENzT');
-    $componentTag = $_instance->getRenderedChildComponentTagName('jLnENzT');
+} elseif ($_instance->childHasBeenRendered('ohI1V5P')) {
+    $componentId = $_instance->getRenderedChildComponentId('ohI1V5P');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ohI1V5P');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('jLnENzT');
+    $_instance->preserveRenderedChild('ohI1V5P');
 } else {
     $response = \Livewire\Livewire::mount('profile-cover', ['userId' => ''.e($userId).'','profileId' => ''.e($profileId).'']);
     $html = $response->html();
-    $_instance->logRenderedChild('jLnENzT', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ohI1V5P', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

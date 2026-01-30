@@ -14,9 +14,11 @@
         <div class="header-text">
             <img src="<?php echo e(asset('img/logo.svg')); ?>" alt="ロゴ">
         </div>
-        <form action="/search" method="post">
+        <form action="/" method="get">
         <?php echo csrf_field(); ?>
             <input type="text" class="keyword-input" name="keyword" placeholder="    なにをお探しですか？" value="<?php echo e($keyword); ?>">
+            <!-- 下記追加-->
+            <input type="hidden" name="page" value="search">
         </form>
         <nav class="link">
             <form class="logout-form" action="/logout" method="post">

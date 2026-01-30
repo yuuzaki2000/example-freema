@@ -9,15 +9,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('purchase-cover', ['postCode' => ''.e($post_code).'','productId' => ''.e($product->id).'','post_code' => ''.e($post_code).'','address' => ''.e($address).'','building' => ''.e($building).''])->html();
-} elseif ($_instance->childHasBeenRendered('1yAmweQ')) {
-    $componentId = $_instance->getRenderedChildComponentId('1yAmweQ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1yAmweQ');
+} elseif ($_instance->childHasBeenRendered('QbjhUvU')) {
+    $componentId = $_instance->getRenderedChildComponentId('QbjhUvU');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QbjhUvU');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1yAmweQ');
+    $_instance->preserveRenderedChild('QbjhUvU');
 } else {
     $response = \Livewire\Livewire::mount('purchase-cover', ['postCode' => ''.e($post_code).'','productId' => ''.e($product->id).'','post_code' => ''.e($post_code).'','address' => ''.e($address).'','building' => ''.e($building).'']);
     $html = $response->html();
-    $_instance->logRenderedChild('1yAmweQ', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('QbjhUvU', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

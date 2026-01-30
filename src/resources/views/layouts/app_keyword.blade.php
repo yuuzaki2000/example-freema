@@ -14,9 +14,11 @@
         <div class="header-text">
             <img src="{{asset('img/logo.svg')}}" alt="ロゴ">
         </div>
-        <form action="/search" method="post">
+        <form action="/" method="get">{{--actionを"/search"から"/"へ変更し、methodをpostからgetへ変更--}}
         @csrf
             <input type="text" class="keyword-input" name="keyword" placeholder="    なにをお探しですか？" value="{{$keyword}}">
+            <!-- 下記追加-->
+            <input type="hidden" name="page" value="search">
         </form>
         <nav class="link">
             <form class="logout-form" action="/logout" method="post">
